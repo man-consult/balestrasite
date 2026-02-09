@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://balestra.group/sitemap-index.xml
