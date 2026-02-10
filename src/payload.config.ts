@@ -51,6 +51,7 @@ export default buildConfig({
   }),
   plugins: [
     r2Storage({
+      // @ts-expect-error — R2Bucket type mismatch between workers-types and @payloadcms/storage-r2
       bucket: cloudflare.env.R2,
       collections: { media: true },
     }),
