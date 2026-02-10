@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { getLang } from '@/i18n/get-lang'
-import { useTranslations } from '@/i18n/translations'
+import { getTranslations } from '@/i18n/translations'
 import { MobileMenu } from './MobileMenu'
 
 export async function Header() {
   const lang = await getLang()
-  const t = useTranslations(lang)
+  const t = getTranslations(lang)
 
   return (
     <header className="border-b border-white/10 py-4 sticky top-0 bg-balestra-black/95 backdrop-blur-sm z-50">

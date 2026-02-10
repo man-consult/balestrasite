@@ -213,7 +213,7 @@ export const translations: Record<'en' | 'en-gb', TranslationDict> = {
   },
 };
 
-export function useTranslations(lang: 'en' | 'en-gb' = 'en') {
+export function getTranslations(lang: 'en' | 'en-gb' = 'en') {
   return function t(key: TranslationKey, replacements?: Record<string, string>): string {
     const translation = translations[lang][key as TranslationKey] || translations[defaultLang][key as TranslationKey] || key;
 

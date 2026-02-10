@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getLang } from '@/i18n/get-lang'
-import { useTranslations } from '@/i18n/translations'
+import { getTranslations } from '@/i18n/translations'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default async function AboutPage() {
   const lang = await getLang()
-  const t = useTranslations(lang)
+  const t = getTranslations(lang)
 
   return (
     <>
@@ -94,14 +94,19 @@ export default async function AboutPage() {
           />
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-balestra-black p-8 rounded-sm border border-balestra-red/50">
-              <h3 className="font-serif text-2xl text-balestra-red mb-4">
+            <a
+              href="https://procurevalue.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-balestra-black p-8 rounded-sm border border-balestra-red/50 hover:border-balestra-red hover:bg-balestra-red/5 transition-all group"
+            >
+              <h3 className="font-serif text-2xl text-balestra-red mb-4 group-hover:text-white transition-colors">
                 {t('about.vision.procurevalue.title')}
               </h3>
               <p className="text-gray-400 leading-relaxed">
                 {t('about.vision.procurevalue.desc')}
               </p>
-            </div>
+            </a>
 
             <div className="bg-balestra-black p-8 rounded-sm border border-white/10">
               <h3 className="font-serif text-2xl text-white mb-4">

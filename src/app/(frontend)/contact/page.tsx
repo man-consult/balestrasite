@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getLang } from '@/i18n/get-lang'
-import { useTranslations } from '@/i18n/translations'
+import { getTranslations } from '@/i18n/translations'
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default async function ContactPage() {
   const lang = await getLang()
-  const t = useTranslations(lang)
+  const t = getTranslations(lang)
 
   const contacts = [
     {

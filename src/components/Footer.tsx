@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { getLang } from '@/i18n/get-lang'
-import { useTranslations } from '@/i18n/translations'
+import { getTranslations } from '@/i18n/translations'
 
 export async function Footer() {
   const lang = await getLang()
-  const t = useTranslations(lang)
+  const t = getTranslations(lang)
 
   return (
     <footer className="border-t border-white/10 py-12 mt-auto bg-black/20">

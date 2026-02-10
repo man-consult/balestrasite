@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getLang } from '@/i18n/get-lang'
-import { useTranslations } from '@/i18n/translations'
+import { getTranslations } from '@/i18n/translations'
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   const lang = await getLang()
-  const t = useTranslations(lang)
+  const t = getTranslations(lang)
 
   const valueProps = [
     { title: t('home.value.intelligence.title'), desc: t('home.value.intelligence.desc') },
