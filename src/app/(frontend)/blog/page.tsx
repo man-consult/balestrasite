@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 
@@ -35,7 +36,7 @@ export default async function BlogListingPage() {
         ) : (
           <div className="space-y-8">
             {posts.map((post) => (
-              <a
+              <Link
                 key={post.id}
                 href={`/blog/${post.slug}`}
                 className="block group bg-balestra-black p-8 rounded-sm border border-white/10 hover:border-balestra-red/50 transition-all"
@@ -62,7 +63,7 @@ export default async function BlogListingPage() {
                     </time>
                   )}
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         )}

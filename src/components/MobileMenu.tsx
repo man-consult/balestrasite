@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export function MobileMenu({ aboutLabel, insightsLabel, contactLabel }: { aboutLabel: string; insightsLabel: string; contactLabel: string }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,9 +21,9 @@ export function MobileMenu({ aboutLabel, insightsLabel, contactLabel }: { aboutL
       {isOpen && (
         <div className="md:hidden border-t border-white/10 bg-balestra-black absolute w-full left-0 top-full shadow-2xl">
           <div className="flex flex-col p-6 gap-4 text-center">
-            <a href="/about" className="text-gray-300 hover:text-balestra-red py-2">{aboutLabel}</a>
-            <a href="/blog" className="text-gray-300 hover:text-balestra-red py-2">{insightsLabel}</a>
-            <a href="/contact" className="text-balestra-red font-bold py-2">{contactLabel}</a>
+            <Link href="/about" className="text-gray-300 hover:text-balestra-red py-2">{aboutLabel}</Link>
+            <Link href="/blog" className="text-gray-300 hover:text-balestra-red py-2">{insightsLabel}</Link>
+            <Link href="/contact" className="text-balestra-red font-bold py-2">{contactLabel}</Link>
           </div>
         </div>
       )}

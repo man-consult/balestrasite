@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getLang } from '@/i18n/get-lang'
 import { useTranslations } from '@/i18n/translations'
 
@@ -112,12 +113,12 @@ export default async function AboutPage() {
         </div>
 
         <div className="mt-16 text-center">
-          <a
+          <Link
             href="/contact"
             className="inline-block px-10 py-4 bg-balestra-red text-white font-semibold rounded-sm hover:bg-white hover:text-balestra-black transition-all shadow-lg"
           >
             {t('home.cta.primary')}
-          </a>
+          </Link>
         </div>
       </section>
     </>

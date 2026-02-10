@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
@@ -98,12 +99,12 @@ export default async function BlogPostPage({ params }: Args) {
         )}
 
         <footer className="mt-16 pt-8 border-t border-white/10">
-          <a
+          <Link
             href="/blog"
             className="text-balestra-red hover:text-white transition-colors underline underline-offset-4 decoration-white/10"
           >
             &larr; All Insights
-          </a>
+          </Link>
         </footer>
       </article>
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { getLang } from '@/i18n/get-lang'
 import { useTranslations } from '@/i18n/translations'
 
@@ -45,18 +46,18 @@ export default async function HomePage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <a
+            <Link
               href="/contact"
               className="px-10 py-4 bg-balestra-red text-white font-semibold rounded-sm hover:bg-white hover:text-balestra-black transition-all shadow-lg"
             >
               {t('home.cta.primary')}
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="px-10 py-4 bg-transparent border-2 border-white/20 text-white font-semibold rounded-sm hover:border-balestra-red hover:bg-balestra-red/10 transition-all"
             >
               {t('home.cta.secondary')}
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -137,12 +138,12 @@ export default async function HomePage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="font-serif text-3xl text-white mb-6">{t('home.final.title')}</h2>
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">{t('home.final.desc')}</p>
-          <a
+          <Link
             href="/contact"
             className="inline-block px-10 py-4 bg-balestra-red text-white font-semibold rounded-sm hover:bg-white hover:text-balestra-black transition-all shadow-lg text-lg"
           >
             {t('home.cta.primary')}
-          </a>
+          </Link>
         </div>
       </section>
     </>
