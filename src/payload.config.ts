@@ -48,6 +48,7 @@ export default buildConfig({
   db: sqliteD1Adapter({
     binding: cloudflare.env.D1,
     prodMigrations: migrations,
+    push: process.env.USE_REMOTE !== 'true',
   }),
   plugins: [
     r2Storage({
@@ -64,7 +65,7 @@ function getCloudflareContextFromWrangler(): Promise<CloudflareContext> {
     ({ getPlatformProxy }) =>
       getPlatformProxy({
         environment: process.env.CLOUDFLARE_ENV,
-        remoteBindings: isProduction,
+        remoteBindings: isProduction || process.env.USE_REMOTE === 'true',
       } satisfies GetPlatformProxyOptions),
   )
 }
