@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url'
 import { CloudflareContext, getCloudflareContext } from '@opennextjs/cloudflare'
 import { GetPlatformProxyOptions } from 'wrangler'
 import { r2Storage } from '@payloadcms/storage-r2'
+import { imagePlugin } from '@rubixstudios/payload-images'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -55,6 +56,12 @@ export default buildConfig({
       // @ts-expect-error — R2Bucket type mismatch between workers-types and @payloadcms/storage-r2
       bucket: cloudflare.env.R2,
       collections: { media: true },
+    }),
+    imagePlugin({
+      access: ({ req: { user } }) => Boolean(user),
+      pexels: process.env.API_KEY_PEXELS || '',
+      pixabay: process.env.API_KEY_PIXABAY || '',
+      unsplash: process.env.API_KEY_UNSPLASH || '',
     }),
   ],
 })
